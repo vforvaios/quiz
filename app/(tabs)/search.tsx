@@ -18,7 +18,7 @@ const Search = () => {
       >
         <View style={styles.viewClass}>
           <Image
-            style={styles.logoClass}
+            style={{ ...styles.logoClass }}
             source={require("../../assets/images/logo.png")}
           />
         </View>
@@ -31,12 +31,15 @@ export default Search;
 
 const styles = StyleSheet.create({
   viewClass: {
-    height: 300,
+    height: 200,
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
+    padding: 20,
   },
   logoClass: {
-    width: 100,
-    height: 50,
+    width: "100%",
+    height: "100%",
+    resizeMode: "contain",
   },
 });
