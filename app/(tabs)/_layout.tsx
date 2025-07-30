@@ -1,13 +1,26 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import { StyleSheet } from "react-native";
 
 const _Layout = () => {
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: true,
+        tabBarStyle: {
+          padding: 0, // Reduce padding to remove icon space
+        },
+        tabBarLabelStyle: {
+          fontFamily: "RobotoCondensed-Regular",
+          fontSize: 12,
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
-        options={{ title: "Home", headerShown: false }}
+        options={{
+          title: "Home",
+          headerShown: false,
+        }}
       />
       <Tabs.Screen
         name="search"
@@ -26,5 +39,3 @@ const _Layout = () => {
 };
 
 export default _Layout;
-
-const styles = StyleSheet.create({});

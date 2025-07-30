@@ -19,13 +19,13 @@ export default function Index() {
       }}
     >
       <ImageBackground
-        source={require("../../assets/images/bg.jpg")}
+        source={require("../assets/images/bg.jpg")}
         style={{ flex: 1, width: "100%", height: "100%" }}
       >
         <View style={styles.viewClass}>
           <Image
             style={{ ...styles.logoClass }}
-            source={require("../../assets/images/logo.png")}
+            source={require("../assets/images/logo.png")}
           />
         </View>
         <View
@@ -46,11 +46,14 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   viewClass: {
-    height: 200,
+    height: 350,
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
+    paddingTop: 100,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   logoClass: {
     width: "100%",
