@@ -10,7 +10,12 @@ export default function RootLayout() {
     return null;
   }
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        animation: "slide_from_right", // or 'fade', 'flip', etc.
+        gestureEnabled: true,
+      }}
+    >
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="movie/[id]" options={{ headerShown: false }} />

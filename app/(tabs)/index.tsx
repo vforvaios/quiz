@@ -12,6 +12,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 export default function Index() {
   return (
     <SafeAreaProvider>
+      <StatusBar hidden={true} backgroundColor="transparent" />
       <SafeAreaView
         style={{
           height: "100%",
@@ -20,7 +21,6 @@ export default function Index() {
           justifyContent: "center",
         }}
       >
-        <StatusBar hidden={true} backgroundColor="transparent" />
         <ImageBackground
           source={require("../../assets/images/bg.jpg")}
           style={{ flex: 1, width: "100%", height: "100%" }}
