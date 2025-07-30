@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import {
   Image,
@@ -41,11 +42,40 @@ export default function Index({ navigation }: any) {
               style={styles.buttonClass}
               onPress={() => router.navigate("/(tabs)/search")}
             >
-              <Text
-                style={{ fontFamily: "RobotoCondensed-Regular", fontSize: 18 }}
+              <LinearGradient
+                style={styles.linearGradientClass}
+                colors={["#C8569B", "#BB6CE8"]}
               >
-                START
-              </Text>
+                <Text
+                  style={{
+                    fontFamily: "RobotoCondensed-Regular",
+                    fontSize: 18,
+                    color: "#fff",
+                  }}
+                >
+                  START
+                </Text>
+              </LinearGradient>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.buttonClass}
+              onPress={() => router.navigate("/(tabs)/search")}
+            >
+              <LinearGradient
+                style={styles.linearGradientClass}
+                colors={["#2C66A7", "#3F9FFC"]}
+              >
+                <Text
+                  style={{
+                    fontFamily: "RobotoCondensed-Regular",
+                    fontSize: 18,
+                    color: "#fff",
+                  }}
+                >
+                  QUIT
+                </Text>
+              </LinearGradient>
             </TouchableOpacity>
           </View>
         </ImageBackground>
@@ -70,13 +100,20 @@ const styles = StyleSheet.create({
     height: "100%",
     resizeMode: "contain",
   },
-  buttonClass: {
-    backgroundColor: "yellow",
-    color: "#ddd",
+  linearGradientClass: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
     paddingTop: 20,
     paddingBottom: 20,
     paddingRight: 40,
     paddingLeft: 40,
+    alignItems: "center",
     borderRadius: 20,
+  },
+  buttonClass: {
+    width: "100%",
+    maxWidth: 300,
+    marginBottom: 10,
   },
 });

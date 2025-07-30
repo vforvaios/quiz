@@ -1,15 +1,8 @@
-import {
-  Image,
-  ImageBackground,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import React from "react";
+import { StatusBar, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
+const Index = () => {
   return (
     <SafeAreaProvider>
       <StatusBar hidden={true} backgroundColor="transparent" />
@@ -21,56 +14,12 @@ export default function Index() {
           justifyContent: "center",
         }}
       >
-        <ImageBackground
-          source={require("../../assets/images/bg.jpg")}
-          style={{ flex: 1, width: "100%", height: "100%" }}
-        >
-          <View style={styles.viewClass}>
-            <Image
-              style={{ ...styles.logoClass }}
-              source={require("../../assets/images/logo.png")}
-            />
-          </View>
-          <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-          >
-            <TouchableOpacity
-              style={styles.buttonClass}
-              onPress={() => alert()}
-            >
-              <Text
-                style={{ fontFamily: "RobotoCondensed-Regular", fontSize: 18 }}
-              >
-                START
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </ImageBackground>
+        <View>
+          <Text>Index Details Screen</Text>
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  viewClass: {
-    height: 200,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-  },
-  logoClass: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "contain",
-  },
-  buttonClass: {
-    backgroundColor: "yellow",
-    color: "#ddd",
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingRight: 40,
-    paddingLeft: 40,
-    borderRadius: 20,
-  },
-});
+export default Index;
