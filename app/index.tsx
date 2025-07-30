@@ -1,46 +1,53 @@
 import {
   Image,
   ImageBackground,
+  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
   return (
-    <SafeAreaView
-      style={{
-        height: "100%",
-        width: "100%",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <ImageBackground
-        source={require("../assets/images/bg.jpg")}
-        style={{ flex: 1, width: "100%", height: "100%" }}
+    <SafeAreaProvider>
+      <StatusBar hidden={true} backgroundColor="transparent" />
+      <SafeAreaView
+        style={{
+          height: "100%",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <View style={styles.viewClass}>
-          <Image
-            style={{ ...styles.logoClass }}
-            source={require("../assets/images/logo.png")}
-          />
-        </View>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        <ImageBackground
+          source={require("../assets/images/bg.jpg")}
+          style={{ flex: 1, width: "100%", height: "100%" }}
         >
-          <TouchableOpacity style={styles.buttonClass} onPress={() => alert()}>
-            <Text
-              style={{ fontFamily: "RobotoCondensed-Regular", fontSize: 18 }}
+          <View style={styles.viewClass}>
+            <Image
+              style={{ ...styles.logoClass }}
+              source={require("../assets/images/logo.png")}
+            />
+          </View>
+          <View
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          >
+            <TouchableOpacity
+              style={styles.buttonClass}
+              onPress={() => alert()}
             >
-              START
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-    </SafeAreaView>
+              <Text
+                style={{ fontFamily: "RobotoCondensed-Regular", fontSize: 18 }}
+              >
+                START
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
