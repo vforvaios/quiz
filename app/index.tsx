@@ -1,3 +1,4 @@
+import { useRouter } from "expo-router";
 import {
   Image,
   ImageBackground,
@@ -9,7 +10,9 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
+export default function Index({ navigation }: any) {
+  const router = useRouter();
+
   return (
     <SafeAreaProvider>
       <StatusBar hidden={true} backgroundColor="transparent" />
@@ -36,7 +39,7 @@ export default function Index() {
           >
             <TouchableOpacity
               style={styles.buttonClass}
-              onPress={() => alert()}
+              onPress={() => router.navigate("/(tabs)/search")}
             >
               <Text
                 style={{ fontFamily: "RobotoCondensed-Regular", fontSize: 18 }}

@@ -6,14 +6,8 @@ export default function RootLayout() {
     "RobotoCondensed-Regular": require("../assets/fonts/RobotoCondensed-Regular.ttf"),
   });
 
-  // useEffect(() => {
-  //   if (fontsLoaded) {
-  //     SplashScreen.hideAsync();
-  //   }
-  // }, [fontsLoaded]);
-
   if (!fontsLoaded) {
-    return null; // or <Loading /> screen
+    return null;
   }
   return (
     <Stack>
