@@ -12,7 +12,7 @@ import {
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import globalStyles from "./globalStyles";
 
-export default function Index({ navigation }: any) {
+export default function Index() {
   const router = useRouter();
 
   return (
@@ -41,7 +41,7 @@ export default function Index({ navigation }: any) {
           >
             <TouchableOpacity
               style={globalStyles.buttonStyles}
-              onPress={() => router.navigate("/(tabs)/search")}
+              onPress={() => router.navigate("/categories")}
             >
               <LinearGradient
                 style={styles.linearGradientClass}
