@@ -10,6 +10,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import globalStyles from "./globalStyles";
 
 export default function Index({ navigation }: any) {
   const router = useRouter();
@@ -39,7 +40,7 @@ export default function Index({ navigation }: any) {
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
           >
             <TouchableOpacity
-              style={styles.buttonClass}
+              style={globalStyles.buttonStyles}
               onPress={() => router.navigate("/(tabs)/search")}
             >
               <LinearGradient
@@ -47,11 +48,13 @@ export default function Index({ navigation }: any) {
                 colors={["#C8569B", "#BB6CE8"]}
               >
                 <Text
-                  style={{
-                    fontFamily: "RobotoCondensed-Regular",
-                    fontSize: 18,
-                    color: "#fff",
-                  }}
+                  style={[
+                    globalStyles.textStyles,
+                    {
+                      fontSize: 18,
+                      color: "#fff",
+                    },
+                  ]}
                 >
                   START
                 </Text>
@@ -59,7 +62,7 @@ export default function Index({ navigation }: any) {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={styles.buttonClass}
+              style={globalStyles.buttonStyles}
               onPress={() => router.navigate("/(tabs)/search")}
             >
               <LinearGradient
@@ -67,11 +70,13 @@ export default function Index({ navigation }: any) {
                 colors={["#2C66A7", "#3F9FFC"]}
               >
                 <Text
-                  style={{
-                    fontFamily: "RobotoCondensed-Regular",
-                    fontSize: 18,
-                    color: "#fff",
-                  }}
+                  style={[
+                    globalStyles.textStyles,
+                    {
+                      fontSize: 18,
+                      color: "#fff",
+                    },
+                  ]}
                 >
                   QUIT
                 </Text>
@@ -110,10 +115,5 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     alignItems: "center",
     borderRadius: 20,
-  },
-  buttonClass: {
-    width: "100%",
-    maxWidth: 300,
-    marginBottom: 10,
   },
 });
